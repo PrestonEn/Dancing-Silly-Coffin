@@ -64,7 +64,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="rando.cpp" />
+    <ClCompile Include="point.cpp" />
+    <ClCompile Include="RandomNG.cpp" />
+    <ClCompile Include="approx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

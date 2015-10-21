@@ -3,11 +3,11 @@ Preston Engstrom
 5228549
 COSC 4f00
 
+PROJECT:
+Dancing Silly Coffin
+
 GIT: 
 https://github.com/PrestonEn/Dancing-Silly-Coffin.git
-
-PROJECT NAME: 
-Dancing Silly Coffin
 
 DESCRIPTION:
 Class to implement a random number generator, using a constant seed.
