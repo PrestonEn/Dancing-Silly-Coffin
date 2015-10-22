@@ -11,9 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8032AD80-A0D8-4806-A677-F73B0F1551AA}</ProjectGuid>
-    <RootNamespace>DancingSillyCoffin</RootNamespace>
-    <ProjectName>Random</ProjectName>
+    <ProjectGuid>{3C260B95-5857-482A-9B99-08802202C07E}</ProjectGuid>
+    <RootNamespace>ConwaysGameOfLifeandDeath</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -65,9 +64,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="point.cpp" />
-    <ClCompile Include="RandomNG.cpp" />
-    <ClCompile Include="approx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
