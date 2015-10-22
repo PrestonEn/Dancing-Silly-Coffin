@@ -12,7 +12,7 @@ https://github.com/PrestonEn/Dancing-Silly-Coffin.git
 DESCRIPTION:
 Wrapper class of 2 floating points
 */
-
+#include <iostream>
 class Point{
 	float x_;
 	float y_;
@@ -31,7 +31,9 @@ public:
 	}
 
 	float dist(Point other){
-
+		float d = sqrt(pow((this->x_ + other.getX()),2) + pow((this->y_ + other.getX()),2));
+		std::cout << d;
+		return d;
 	}
 
 };

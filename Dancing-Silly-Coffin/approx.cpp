@@ -20,6 +20,9 @@ using namespace std;
 int main(){
 
 	RandomNG rng = RandomNG(10000, 5000, 5);
-	Point one = Point(rng.roll, rng.roll);
+	Point one = Point(rng.roll(), rng.roll());
+	Point two = Point(0.5,0.5);
+	one.dist(two);
+	getchar();
 }
 
