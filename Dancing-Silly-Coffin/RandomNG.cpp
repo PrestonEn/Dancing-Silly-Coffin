@@ -14,37 +14,34 @@ Class to implement a random number generator, using a constant seed.
 In the intrest of modularity and reuse in part 3 of this assignment,
 it is defined as a standalone class.
 */
+
 #include <iostream>
 using namespace std;
 
 class RandomNG{
 
-//member definitions
-//private:	members are private by default
-	int seed_1_;
-	int seed_2_;
-	int seed_3_;
+private:	//members are private by default
+	int _seed_1;
+	int _seed_2;
+	int _seed_3;
 
 public:
-	RandomNG(int seed1, int seed2, int seed3){
-		seed_1_ = seed1;
-		seed_2_ = seed2;
-		seed_3_ = seed3;
-	}
+	RandomNG(int seed1, int seed2, int seed3) :
+		_seed_1(seed1), _seed_2(seed2), _seed_3(seed3)
+	{}
 	
-
 	float RandomNG::roll(){
 		float tmp;
-		this->seed_1_ = 171 * (this->seed_1_ % 177) - 2 * (this->seed_1_ / 177);
-		if (this->seed_1_  < 0){ this->seed_1_ += 30269; }
+		_seed_1 = 171 * (_seed_1 % 177) - 2 * (_seed_1 / 177);
+		if (_seed_1  < 0) _seed_1 += 30269; 
 
-		this->seed_2_ = 172 * (this->seed_2_ % 176) - 35 * (this->seed_2_ / 176);
-		if (this->seed_2_ < 0){ this->seed_2_ += 30307; }
+		_seed_2 = 172 * (_seed_2 % 176) - 35 * (_seed_2 / 176);
+		if (_seed_2 < 0) _seed_2 += 30307; 
 
-		this->seed_3_ = 170 * (this->seed_3_ % 178) - 63 * (this->seed_3_ / 178);
-		if (this->seed_3_ < 0){ this->seed_3_ += 30323; }
+		_seed_3 = 170 * (_seed_3 % 178) - 63 * (_seed_3 / 178);
+		if (_seed_3 < 0) _seed_3 += 30323; 
 
-		tmp = this->seed_1_ / 30269.0 + this->seed_2_ / 30307.0 + this->seed_3_ / 30323.0;
+		tmp = _seed_1 / 30269.f + _seed_2 / 30307.f + _seed_3 / 30323.f;
 		cout << tmp - (int)tmp << endl;
 		return tmp - (int)tmp;
 	}
