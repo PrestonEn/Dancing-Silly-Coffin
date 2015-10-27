@@ -30,11 +30,18 @@ public:
 		return this->_y;
 	}
 
+	void setX(float x){
+		_x = x;
+	}
+
+	void setY(float y){
+		_y = y;
+	}
+
 	float dist(Point other){
 		float xs = _x - other._x;
 		float ys = _y - other._y;
 		float d = sqrt((xs*xs)+(ys*ys));
-		std::cout << d;
 		return d;
 	}
 
