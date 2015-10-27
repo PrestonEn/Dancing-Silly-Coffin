@@ -45,7 +45,7 @@ public:
 		if (this->seed_3_ < 0){ this->seed_3_ += 30323; }
 
 		tmp = this->seed_1_ / 30269.0 + this->seed_2_ / 30307.0 + this->seed_3_ / 30323.0;
-		cout << tmp - (int)tmp << endl;
+
 		return tmp - (int)tmp;
 	}
 };

@@ -26,8 +26,8 @@ int main(){
 		*it = true;
 	}
 
-
-
+	std::cout << "test";
+	getchar();
 
 }
 

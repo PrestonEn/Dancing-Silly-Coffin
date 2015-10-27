@@ -14,24 +14,26 @@ Wrapper class of 2 floating points
 */
 #include <iostream>
 class Point{
-	float x_;
-	float y_;
+	float _x;
+	float _y;
 public:
 	Point(float x, float y){
-			x_ = x;
-			y_ = y;
+			_x = x;
+			_y = y;
 	}
 
 	float getX(){
-		return this->x_;
+		return this->_x;
 	}
 
 	float getY(){
-		return this->y_;
+		return this->_y;
 	}
 
 	float dist(Point other){
-		float d = sqrt(pow((this->x_ + other.getX()),2) + pow((this->y_ + other.getX()),2));
+		float xs = _x - other._x;
+		float ys = _y - other._y;
+		float d = sqrt((xs*xs)+(ys*ys));
 		std::cout << d;
 		return d;
 	}
