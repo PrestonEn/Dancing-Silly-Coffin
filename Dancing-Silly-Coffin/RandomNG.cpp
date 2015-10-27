@@ -42,7 +42,7 @@ public:
 		if (_seed_3 < 0) _seed_3 += 30323; 
 
 		tmp = _seed_1 / 30269.f + _seed_2 / 30307.f + _seed_3 / 30323.f;
-		cout << tmp - (int)tmp << endl;
+		//cout << tmp - (int)tmp << endl;
 		return tmp - (int)tmp;
 	}
 };
