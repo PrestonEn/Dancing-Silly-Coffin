@@ -31,7 +31,7 @@ int main(){
 	
 	//file init
 	ofstream outfile;
-	outfile.open("results.tsv");
+	outfile.open("approx_results.tsv");
 
 	
 	int total = 32000; 		//number of total shots
