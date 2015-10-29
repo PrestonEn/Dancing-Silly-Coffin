@@ -1,0 +1,26 @@
+/*
+ Quick implementation of neighbour check function 
+ for an array, creating a taurus.
+
+ remove one loop to create a cylander	
+ */
+
+#include <iostream>
+
+const int ARRAY_WDH = 5;
+const int ARRAY_HGT = 5;
+
+int main(){
+	//check surrounding cells of array, where the 
+	//array is a tuarus
+    for(int i = -1; i < 2; i++){
+		for(int j = -1; j <2; j++){
+			std::cout << (ARRAY_WDH+((i%ARRAY_WDH)))%ARRAY_WDH;
+			std::cout << " ";
+			std::cout << (ARRAY_HGT+((j%ARRAY_HGT)))%ARRAY_HGT;
+			std::cout << "\t";
+		}
+		std::cout << "\n";
+    }
+
+}
