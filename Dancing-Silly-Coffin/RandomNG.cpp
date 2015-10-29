@@ -15,6 +15,7 @@ In the intrest of modularity and reuse in part 3 of this assignment,
 it is defined as a standalone class.
 */
 
+#include "RandomNG.h"
 #include <iostream>
 using namespace std;
 
@@ -29,6 +30,7 @@ public:
 	RandomNG(int seed1, int seed2, int seed3) :
 		_seed_1(seed1), _seed_2(seed2), _seed_3(seed3)
 	{}
+
 	
 	float RandomNG::roll(){
 		float tmp;

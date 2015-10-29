@@ -40,13 +40,13 @@ int main(){
 	while (pos <= 30000){
 		multi = 2;
 		if (sieve[pos] == false){
-			count++;
 			//if we fill the vector of known primes, double its size
 			if (count == knownPrimes - 1)
 				knownPrimes = knownPrimes * 2;
 
 			primes.resize(knownPrimes);
 			primes[count] = pos;
+			count++;
 			sieve[pos] = true;
 			cout << setw(10) << pos;
 			while (pos * multi <= 30000){
