@@ -15,8 +15,8 @@ Approximation engine for pi using random floating point pairs
 #include <iostream> //cout
 #include <iomanip>	//setw
 #include <fstream>
-#include "point.cpp"
-#include "RandomNG.cpp"
+#include "point.h"
+#include "RandomNG.h"
 using std::cout;
 using std::setw;
 
@@ -30,14 +30,11 @@ int main(){
 	Point shot = Point(0.f, 0.f);	//init point where "shot lands"
 	
 	//file init
-	ofstream outfile;
-	outfile.open("approx_results.tsv");
 
 	
 	int total = 32000; 		//number of total shots
 	int shotsFired = 0;		//count of shots fired
 	int hitCount = 0;		//shots with euclidian distance to center <= 0.5
-	float dist;				//temp var for holding dist of shot
 	int field_per_line = 2;
 	int count = 0;
 	//Calculate an approx. of pi every 1000 shots for 32000 consecutive shots
@@ -45,7 +42,7 @@ int main(){
 	//N is number of shots that hit
 	//4.0 * (hits)/1000
 	//4.0 * (hits)/2000 .... ect
-	while (shotsFired < total){
+	while (shotsFired < total)
 		for (int i = 0; i < 1000; i++){
 			shotsFired++;
 			shot.setX(rng.roll());
@@ -56,7 +53,7 @@ int main(){
 			}
 
 		}
-
+		cout << "hello";
 	getchar();
 }
 

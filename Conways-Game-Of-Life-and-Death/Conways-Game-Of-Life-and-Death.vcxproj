@@ -66,6 +66,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Conways.cpp" />
+    <ClCompile Include="RandomNG.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Dancing-Silly-Coffin\RandomNG.h" />
