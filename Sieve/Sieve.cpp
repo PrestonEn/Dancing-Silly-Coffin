@@ -16,11 +16,14 @@ Implementation of Sieve or Erathostenes
 #include <iostream>
 #include <vector>
 #include <iomanip>	//setw
+#include <fstream>
 using std::cout;
 using std::setw;
 
 
 int main(){
+	std::ofstream myfile;
+	myfile.open("primes.tsv");
 	std::vector<bool> sieve;
 	std::vector<int> primes;
 	//in the range of 0-30000, interested only in >2
@@ -36,7 +39,7 @@ int main(){
 	for (std::vector<bool>::iterator it = sieve.begin(); it != sieve.end(); ++it){
 		*it = false;
 	}
-
+	int line = 7;
 	while (pos <= 30000){
 		multi = 2;
 		if (sieve[pos] == false){
@@ -46,9 +49,18 @@ int main(){
 
 			primes.resize(knownPrimes);
 			primes[count] = pos;
+
 			count++;
 			sieve[pos] = true;
-			cout << setw(10) << pos;
+			if (line != 0){
+				myfile << setw(10) << std::left << pos << "\t";
+				line--;
+			}
+			else{
+				myfile << setw(10) << std::left << pos;
+				myfile << setw(0) << std::left << "\n";
+				line = 7;
+			}
 			while (pos * multi <= 30000){
 				sieve[pos*multi] = true;
 				multi++;
@@ -56,18 +68,33 @@ int main(){
 		}
 		pos++;
 	}
-	//size the vector to reflect the number of primes found
 
-
+	myfile << "\n\n\n";
+	line = 2;
+	int pair = 1;
 	for (int i = 0; i <count-1; i++){
 		for (int j = i + 1; j < count; j ++){
 			if (primes[j] - primes[i] == 2){
-				cout << setw(15) << "pair(" << primes[i] << ", " << primes[j] << ")";
+				if (line != 0){
+					//cout << setw(18) << std::left << pair << ":(" << primes[i] << ", " << primes[j] << ")\t";
+					myfile << setw(18) <<  std::left << pair << ":(" << primes[i] << ", " << primes[j] << ")\t";
+					line--;
+					pair++;
+				}
+				else{
+					//cout << std::left << setw(18) << pair << ":(" << primes[i] << "," << primes[j] << ")";
+					//cout << setw(0) << std::left  << "\n";
+					myfile << setw(18) << std::left  << pair << ":(" << primes[i] << "," << primes[j] << ")";
+					myfile << setw(0) << std::left  << "\n";
+					line = 2;
+					pair++;
+				}
 				break;
 			}
 		}
 	}
 
+	myfile.close();
 	getchar();
 
 }
