@@ -20,17 +20,21 @@ int Board::cntNghbrs(int x, int y){
 	for (int i = -1; i < 2; i++)
 		for (int j = -1; j < 2; j++){
 
-				xP = (x+((i%_ARRAY_WDH))) % _ARRAY_WDH;
-				yP = (y+((j%_ARRAY_HGT))) % _ARRAY_HGT;
-				if (xP == -1)
-					xP = _ARRAY_WDH - 1;
-				if (xP >= _ARRAY_WDH)
-					xP = 0;
-				if (yP == -1)
-					yP = _ARRAY_HGT - 1;
-				if (yP >= _ARRAY_HGT)
-					xP = 0;
-			if (_state[xP][yP] && i != 0 && j != 0 && i!=j){
+			xP = (x+((i%_ARRAY_WDH))) % _ARRAY_WDH;
+			yP = (y+((j%_ARRAY_HGT))) % _ARRAY_HGT;
+			if (xP == -1)
+				xP = _ARRAY_WDH - 1;
+			if (xP >= _ARRAY_WDH)
+				xP = 0;
+			if (yP == -1)
+				yP = _ARRAY_HGT - 1;
+			if (yP >= _ARRAY_HGT)
+				xP = 0;
+			//std::cout << xP << "\t" << yP << "\t" << _state[xP][yP] << "\n";
+			if ( i == 0 && j == 0){
+	
+			}
+			else if(_state[xP][yP]){
 				cnt++;
 			}
 		}
